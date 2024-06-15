@@ -1,0 +1,41 @@
+<h3>Thêm Students</h3>
+<a routerLink="/student">Danh sách Students</a>
+<form action="" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="form-group mt-3">
+    <input type="text" name="masv" ngModel #masv="ngModel" required placeholder="Nhập mã sinh viên"
+      class="form-control"
+    />
+    <div
+      class="text-danger"
+      *ngIf="masv.invalid && (masv.dirty || masv.touched)"
+    >
+      Vui lòng nhập mã sinh viên
+    </div>
+  </div>
+  <div class="form-group mt-3">
+    <input type="text" name="hoten" ngModel #hoten="ngModel" required placeholder="Nhập họ tên"
+      class="form-control"
+    />
+    <div
+      class="text-danger"
+      *ngIf="hoten.invalid && (hoten.dirty || hoten.touched)"
+    >
+      Vui lòng nhập họ tên
+    </div>
+  </div>
+  <div class="form-group mt-3">
+    <input type="number" name="diem" ngModel #diem="ngModel" required placeholder="Nhập điểm"
+      class="form-control"
+    />
+    <div
+      class="text-danger"
+      *ngIf="diem.invalid && (diem.dirty || diem.touched)"
+    >
+      Vui lòng nhập điểm
+    </div>
+  </div>
+  <div class="form-group mt-3">
+    <button type="submit" class="btn btn-primary">Thêm Students</button>
+  </div>
+</form>
+
